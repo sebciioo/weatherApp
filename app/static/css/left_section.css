@@ -1,0 +1,220 @@
+.left-section {
+  width: 70%;
+}
+
+.next-day-forecat {
+  margin-bottom: 40px;
+}
+
+.next-day-forecat .main-container {
+  display: flex;
+  justify-content: start;
+  gap: 10px;
+  height: 250px;
+}
+
+.left-section h2 {
+  text-align: left;
+  margin-bottom: 40px;
+  font-size: 20px;
+}
+
+.today,
+.card {
+  position: relative;
+  background-color: #1c1c1c;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card {
+    flex: 1;
+}
+
+.today {
+  background-color: #9dcdf3;
+  background: -moz-linear-gradient(top, #92bfe0 80%, #9dcdf3 20%);
+  background: -webkit-linear-gradient(top, #92bfe0 80%, #9dcdf3 20%);
+  background: linear-gradient(to bottom, #92bfe0 20%, #9dcdf3 20%);
+  color: black;
+  width: 250px !important;
+  align-items: normal !important;
+  text-align: left;
+}
+
+.day {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.time {
+  font-size: 18px;
+}
+
+.temp {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.details {
+  font-size: 14px;
+}
+
+.details .text-details {
+  color: #5a5c5e;
+}
+
+.icon img {
+  width: 100px;
+}
+
+.icon i {
+  font-size: 36px;
+  margin-top: 10px;
+}
+
+.card .temp {
+  margin-top: auto;
+}
+
+.top-information.next-day {
+  position: relative;
+}
+
+.top-information {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+}
+
+.today .bottom-information {
+  display: block;
+}
+
+.today .bottom-information .container-row {
+  display: flex;
+  align-items: center;
+}
+
+.first-row {
+  width: 50%;
+}
+
+.second-row {
+  width: 50%;
+}
+
+.today .top-information .day,
+.today .top-information .time {
+  font-weight: 700;
+}
+
+.today .temp {
+  font-size: 45px;
+  font-weight: 700;
+}
+
+.next-day.top-information::after {
+  content: '';
+  position: absolute;
+  top: 30px;
+  left: -15px;
+  width: 60px;
+  height: 2px;
+  background-color: #5a5c5e;
+}
+
+.other-measures .card-container {
+  background-color: #1c1c1c;
+  position: relative;
+  padding: 25px;
+}
+
+.other-measures .card-container .wrapper {
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.other-measures .card-container .cards {
+  flex-wrap: wrap;
+  flex-grow: 1;
+  row-gap: 8px;
+}
+
+.other-measures .card-container .card-item .label {
+  color: #5a5c5e;
+}
+
+.other-measures .card-container .card-item {
+  width: 50%;
+  gap: 4px;
+}
+
+.first-card .card-item {
+  width: 25% !important;
+  flex-direction: column-reverse;
+  gap: 8px;
+}
+
+.other-measures .card-container .wrapper,
+.other-measures .card-container .cards,
+.other-measures .card-container .card-item {
+  display: flex;
+  align-items: center;
+}
+
+.card-container.second-card .card-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  grid-area: 8px 16px;
+}
+
+.card-container.second-card .label {
+  margin-block-end: 4px;
+}
+
+.other-measures i {
+  font-size: 2.5rem;
+}
+
+.other-measures h3 {
+  color: #5a5c5e;
+  text-align: left;
+  font-size: 1rem;
+  margin-block-end: 20px;
+}
+
+.other-measures .measuer-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.other-measures .card-container:nth-child(-n + 2) {
+  grid-column: span 2;
+}
+
+p.measure,
+p.title {
+  font-size: 1.7rem;
+}
+
+p.label {
+  font-size: 0.8rem;
+}
+
+p.title span {
+  font-size: 1.2rem;
+}
+
+.information {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 15px;
+}
