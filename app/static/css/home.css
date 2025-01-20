@@ -1,0 +1,363 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    font-family: 'Poppins';
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    background: black !important;
+}
+
+header{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+header::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+    z-index: 1;
+}
+
+header::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /*background: linear-gradient(270deg, transparent, rgba(0, 0, 0, 1.9));*/
+     background: linear-gradient(270deg, rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.75));
+    z-index: 1;
+}
+
+header video{
+    position: absolute;
+    width: 120%;
+    height: 170%;
+    z-index: -1;
+}
+
+header nav{
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding: 7px 100px;
+    align-items: center;
+    top: 0;
+    width: 100%;
+    height: 10%;
+    z-index: 25;
+}
+
+header nav .logo{
+    position: relative;
+    color: white;
+    text-decoration: none;
+    font-width: 700;
+    font-size: 2em;
+}
+
+header nav .logo a{
+    text-decoration: none;
+    color: white;
+    letter-spacing: 2.5px;
+}
+
+header .content{
+    z-index: 1000;
+    color: white;
+    position: relative;
+    padding-left: 100px;
+}
+
+header .content h1{
+    font-size: 55px;
+    line-height: 50px;
+    font-weight: 700;
+}
+
+header .content p{
+    font-size: 12px;
+    width: 500px;
+    margin-top: 20px;
+}
+
+header .content .btns{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+header .content .btns a{
+    padding: 8px 12px;
+    font-size: 15px;
+    font-weight: 600;
+    background: linear-gradient(90deg, #751500, #fc1f15);
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+header section{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    padding: 0px 100px;
+    bottom: 20px;
+    color: white;
+    z-index: 20;
+}
+
+header section .infoGame{
+    position: absolute;
+    bottom: -20px;
+    z-index: 21;
+    padding: 5px 10px;
+}
+
+header section h6{
+    color: white;
+    z-index: 21;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+header section .type{
+    display: flex;
+}
+
+header section h5{
+    color: rgb(142, 230, 40);
+    font-size: 10px;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+header section h4{
+    margin-bottom: -15px;
+}
+
+header section .cards{
+    position: relative;
+    width: 100%;
+    height: 200px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header section .cards .card{
+    position: relative;
+    width: 380px;
+    height: 140px;
+    border-radius: 8px;
+    margin-right: 10px;
+    background: black;
+    transition: .3s linear;
+    transition: transform .3s;
+}
+
+header section .cards .card:hover{
+    transform: scale(0.8);
+}
+
+header section .cards .poster{
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    position: relative;
+}
+
+header form .logout-button{
+    background: linear-gradient(90deg, #751500, #fc1f15);
+    color: white;
+    padding: 10px 25px 10px 25px;
+    border-radius: 25px;
+    border: none;
+}
+
+
+header .card-container{
+    position: absolute;
+    right: 100px;
+    top: 80px;
+    z-index: 10;
+}
+
+header .card-container .first-row{
+    display: flex;
+}
+
+header .card-container .second-row{
+    margin-top: 30px;
+    display: flex;
+}
+
+.first-row .box:first-child,
+.second-row .box:first-child {
+    margin-right: 75px;
+}
+
+header .box{
+    position: relative;
+    width: 200px;
+    height: 250px;
+    background: rgba(255, 255, 255, .1);
+    backdrop-filter: blur(25px);
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 25px;
+    padding: 20px;
+}
+
+header .box .weather-card {
+    text-align: center;
+    color: white;
+}
+
+header .box .weather-card .container .weather-info .weather img{
+    width: 70%;
+}
+
+header .box .weather-card .container .weather-info .weather .temperature{
+    position: relative;
+    font-size: 32px;
+    line-height: 1;
+    font-weight: 700;
+    margin: 0 0 6px 0px;
+}
+
+header .box .weather-card .container .weather-info .weather .temperature span{
+    position: absolute;
+    font-size: 12px;
+    margin-left: 4px;
+}
+
+header .box .weather-card .container .weather-info .weather .description{
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+
+header .box .weather-card .weather-details{
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    display: flex;
+}
+
+header .box .weather-card .weather-details i{
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+header .box .weather-card .weather-details span{
+    display: inline;
+    font-size: 8px;
+    font-weight: 500;
+}
+
+header .box .weather-card .weather-details p{
+    font-size: 8px;
+    font-weight: 500;
+}
+
+header .box .weather-card .weather-details .humidity,
+header .box .weather-card .weather-details .wind{
+    display: flex;
+    align-items: center;
+    width: 50%;
+    padding: 0 20px;
+}
+
+.form{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+input{
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
+    box-sizing: border-box;
+}
+
+
+input[type="text"]{
+    background: #fff;
+    height: 50px;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    width: 270px;
+    padding: 0 25px;
+}
+
+input[type="text"].city-input{
+    border-radius: 25px 0 0 25px;
+}
+
+input[type="text"].country-input{
+    left: -5px;
+     border-radius: 0 0 0 0;
+    border-left: 1px solid #818282;
+}
+
+input[type="submit"]{
+    position: relative;
+    border-radius: 0 25px 25px 0;
+    font-size: 1rem;
+    height: 50px;
+    left: -10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    width: 100px;
+    background: #92bfe0;
+    color: white;
+    text-shadow:
+            -1px -1px 0 #000,
+            1px -1px 0 #000,
+            -1px  1px 0 #000,
+            1px  1px 0 #000;
+}
+
+.main-content {
+    width: 100%;
+    display: flex;
+}
+
+.mockup {
+    position: relative;
+    display: block;
+    z-index: 999;
+}
+
+.mockup img{
+    position: absolute;
+    width: 1000px;
+    top: -250px;
+    left: -80px;
+}
+
+.history-button{
+    color: black;
+    background: #fff;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 25px;
+}

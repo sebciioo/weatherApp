@@ -1,0 +1,130 @@
+header {
+  padding: 20px 0;
+  position: relative;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  margin-bottom: 40px;
+  overflow: hidden;
+}
+
+header .main-menu {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.icon-section.back-icon,
+.icon-section.location-icon,
+.icon-section.additional-information .icon-section{
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1e1e1e;
+  border-radius: 50%;
+}
+
+.icon-section.additional-information {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.icon-section.additional-information .description{
+  margin-left: 15px;
+}
+
+.icon-section i {
+  color: white;
+  font-size: 18px;
+}
+
+.icon-section.back-icon{
+  cursor: pointer;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+}
+
+.location .description {
+  margin-left: 15px;
+}
+
+.location p{
+  text-transform: lowercase;
+}
+.location p::first-letter{
+  text-transform: uppercase;
+}
+
+.description{
+  display: flex;
+}
+
+.country{
+  margin-left: 5px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #1e1e1e;
+  border-radius: 25px;
+  padding: 10px 20px;
+  width: 450px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.search-bar i {
+  color: white;
+  margin-right: 10px;
+}
+
+.search-bar input.city-input,
+.search-bar input.country-input{
+  border: none;
+  background-color: transparent;
+  color: #ffffff;
+  outline: none;
+  width: 150px;
+}
+
+input[type="text"]{
+  border: none;
+  outline: none;
+}
+
+input[type="submit"]{
+    position: absolute;
+  top: -10px;
+  right: -110px;
+    border-radius: 0 25px 25px 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    width: 80px;
+    height: 40px;
+    background: white;
+    color: black;
+}
+
+.search-bar input::placeholder {
+  color: #858484;
+}
+
+.search-bar form{
+  display: flex;
+  position: relative;
+}
+
+.back-icon,
+.location {
+  margin-right: 50px;
+}

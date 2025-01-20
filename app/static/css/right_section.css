@@ -1,0 +1,81 @@
+.right-section {
+  width: 30%;
+  margin-left: 25px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.right-section h2 {
+  text-align: left;
+  margin-bottom: 40px;
+  font-size: 20px;
+}
+
+.chart {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.wind-container{
+  position: relative;
+  display: grid;
+  flex: 1;
+    gap: 20px;
+}
+
+.wind-card{
+  background: #1c1c1c;
+  border-radius: 10px;
+  padding: 25px;
+}
+
+.wind-card h3{
+    color: #5a5c5e;
+    text-align: left;
+    font-size: 1rem;
+}
+
+.wind-card .icon-text-container{
+  display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    text-align: center;
+}
+
+.wind-card .icon-text-container i{
+  width: 50%;
+    align-items: center;
+  display: flex;
+  justify-content: start;
+  font-size: 2.8rem;
+}
+
+.wind-card .icon-text-container .wind-information{
+  width: 50%;
+   display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 15px;
+  justify-content: start;
+}
+
+.wind-card .icon-text-container .wind-information p{
+  font-size: 1.7rem;
+}
+
+.wind-card .icon-text-container .wind-information p.label{
+    color: #5a5c5e;
+    font-size: 0.8rem;
+}
+
+.icon-wrapper {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

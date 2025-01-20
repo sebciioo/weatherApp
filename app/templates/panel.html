@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <!-- CSS -->
+        <link rel="stylesheet" href="../static/css/main_panel.css" />
+        <link rel="stylesheet" href="../static/css/header.css" />
+        <link rel="stylesheet" href="../static/css/fonts.css" />
+        <link rel="stylesheet" href="../static/css/left_section.css" />
+        <link rel="stylesheet" href="../static/css/right_section.css" />
+        <link rel="icon" type="image/png" href="../static/images/favicon.png" />
+        <title>AuraAlert - Panel</title>
+    </head>
+    <body>
+        <header>
+            <div class="menu">
+                <div class="container">
+                    <div class="main-menu">
+                        <div class="icon-section back-icon" onclick="goToIndex()">
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </div>
+                        <div class="location">
+                            <div class="icon-section location-icon">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            {% if city and country %}
+                            <div class="description">
+                                <p class="city">{{ city }},</p>
+                                <p class="country">{{ country }}</p>
+                            </div>
+                            {% endif %} {% if not (city and country) %}
+                            <div class="description">
+                                <p>Brak, brak</p>
+                            </div>
+                            {% endif %}
+                        </div>
+                        <div class="search-bar">
+                            <form method="post">
+                                <i class="fas fa-search"></i>
+                                <input type="text" class="city-input" name="city" placeholder="Miasto..." />
+                                <input type="text" class="country-input" name="country" placeholder="Kraj..." />
+                                <input type="submit" value="Sprawdź" />
+                            </form>
+                        </div>
+                        <div class="icon-section additional-information" onclick="goToHistory()">
+                            <div class="icon-section">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                            <div class="description">
+                                <p>Przejdź do historii</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %} {% for category, message in messages %}
+        <div class="error-alert">
+            <img src="../static/images/test.png" />
+            <div class="alert alert-{{ category }}">{{ message }}</div>
+        </div>
+        {% endfor %} {% endif %} {% endwith %} {% if city and country %}
+        <div class="container column-container">
+            <div class="left-section">
+                <div class="next-day-forecat">
+                    <h2>Pogoda na następne dni</h2>
+                    <div class="main-container">
+                        <div class="today">
+                            <div class="top-information">
+                                <div class="day">{{ current_weather_data.day_of_week }}</div>
+                                <div class="time">{{ current_weather_data.current_time }}</div>
+                            </div>
+                            <div class="bottom-information">
+                                <div class="container-row">
+                                    <div class="first-row">
+                                        <div class="temp">{{ current_weather_data.temp }}&deg;</div>
+                                    </div>
+                                    <div class="second-row">
+                                        <div class="icon">
+                                            <img src="../static/images/{{ current_weather_data.weather }}.png" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="details">
+                                    <div><span class="text-details">Odczuwalne:</span> {{ current_weather_data.feels_like }}&deg;</div>
+                                    <div><span class="text-details">Wschód:</span> {{ current_weather_data.sunrise }}</div>
+                                    <div><span class="text-details">Zachód:</span> {{ current_weather_data.sunset }}</div>
+                                </div>
+                            </div>
+                        </div>
+                        {% for day in weather_data %}
+                        <div class="card">
+                            <div class="top-information next-day">
+                                <div class="day">{{ day.day_of_week }}</div>
+                            </div>
+                            <div class="bottom-information">
+                                <div class="icon">
+                                    <img src="../static/images/{{ day.weather }}.png" />
+                                </div>
+                                <div class="temp">{{ day.avg_temperature|round }}&deg;</div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="other-measures">
+                    <h2>Dziejsze dane prognozowe</h2>
+                    <div class="main-container">
+                        <div class="measuer-list">
+                            <div class="card-container first-card">
+                                <h3 class="title">Jakość powietrza</h3>
+                                <div class="wrapper">
+                                    <i class="fa-solid fa-wind"></i>
+                                    <ul class="cards">
+                                        <li class="card-item">
+                                            <p class="measure">{{ air_quality_data.co }}</p>
+                                            <p class="label">CO<sub>2</sub></p>
+                                        </li>
+                                        <li class="card-item">
+                                            <p class="measure">{{ air_quality_data.no }}</p>
+                                            <p class="label">NO</p>
+                                        </li>
+                                        <li class="card-item">
+                                            <p class="measure">{{ air_quality_data.pm2_5 }}</p>
+                                            <p class="label">PM<sub>2.5</sub></p>
+                                        </li>
+                                        <li class="card-item">
+                                            <p class="measure">{{ air_quality_data.o3 }}</p>
+                                            <p class="label">O<sub>3</sub></p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-container second-card">
+                                <h3 class="title">Wschód i zachód słońca</h3>
+                                <div class="card-list">
+                                    <div class="card-item">
+                                        <i class="fa-solid fa-sun"></i>
+                                        <div class="information">
+                                            <p class="label">Wschód</p>
+                                            <p class="title">{{ current_weather_data.sunrise }}</p>
+                                        </div>
+                                    </div>
+                                    <div class="card-item">
+                                        <i class="fa-solid fa-moon"></i>
+                                        <div class="information">
+                                            <p class="label">Zachód</p>
+                                            <p class="title">{{ current_weather_data.sunset }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-container">
+                                <h3>Wilgotność</h3>
+                                <div class="wrapper">
+                                    <i class="fa-solid fa-water"></i>
+                                    <p class="title">{{ current_weather_data.humidity }}<span>%</span></p>
+                                </div>
+                            </div>
+                            <div class="card-container">
+                                <h3>Ciśnienie</h3>
+                                <div class="wrapper">
+                                    <i class="fa-solid fa-wind"></i>
+                                    <p class="title">{{ current_weather_data.pressure }}<span>hPa</span></p>
+                                </div>
+                            </div>
+                            <div class="card-container">
+                                <h3>Widoczność</h3>
+                                <div class="wrapper">
+                                    <i class="fa-solid fa-eye"></i>
+                                    <p class="title">{{ (current_weather_data.visibility / 1000)|round }}<span>km</span></p>
+                                </div>
+                            </div>
+                            <div class="card-container">
+                                <h3>Odczuwalne</h3>
+                                <div class="wrapper">
+                                    <i class="fa-solid fa-temperature-three-quarters"></i>
+                                    <p class="title">{{ current_weather_data.feels_like }}&deg<span>C</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right-section">
+                <div class="chart">
+                    <h2>Kierunek i prędkość wiatru</h2>
+                    <div class="wind-container">
+                        {% for wind in wind_data %}
+                        <div class="wind-card">
+                            <h3>{{ wind.time }}</h3>
+                            <div class="icon-text-container">
+                                <div class="icon-wrapper">
+                                    <i class="fa-solid fa-arrow-up" style="transform: rotate({{ wind.direction }}deg);"></i>
+                                </div>
+                                <div class="wind-information">
+                                    <p class="label">Prędkość wiatru</p>
+                                    <p>{{ wind.speed }} km/h</p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        <footer>
+            <script
+                src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js"
+                integrity="sha512-+2pW8xXU/rNr7VS+H62aqapfRpqFwnSQh9ap6THjsm41AxgA0MhFRtfrABS+Lx2KHJn82UOrnBKhjZOXpom2LQ=="
+                crossorigin="anonymous"
+                referrerpolicy="no-referrer"
+            ></script>
+            <!-- Icon -->
+            <script src="https://kit.fontawesome.com/d75132e699.js" crossorigin="anonymous"></script>
+            <script src="../static/js/backButton.js"></script>
+        </footer>
+    </body>
+</html>
