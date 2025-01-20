@@ -1,4 +1,4 @@
-# Weather App - AuraAlert
+# WeatherApp - AuraAlert
 
 **AuraAlert** is a web application that allows users to check current and forecasted weather data for selected locations. It is written in Python using the Flask framework, along with libraries such as SQLAlchemy, matplotlib, and the OpenWeatherMap API for retrieving weather data.
 
